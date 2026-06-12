@@ -11,62 +11,61 @@
 
 :root {
     /* surfaces & text */
-    --bg: #f6f4fb;
-    /* off-white accented by lavender */
-    --bg-elev: #ffffff;
-    --bg-soft: #e4e0f7;
-    /* ultra-soft lavender tint */
-    --bg-nav: rgba(246, 244, 251, 0.82);
-    --text: #2c2740;
-    /* deep slate-purple ink */
-    --text-muted: #6c647e;
-    --text-faint: #bab0cb;
-    /* slate-purple */
+    --bg: #A6B6CF;
+    /* Base background (Steel slate blue) */
+    --bg-elev: #CFDCEC;
+    /* Elevated surfaces/nav (Lighter ice blue) */
+    --bg-soft: #ffffff;
+    /* Hover state (Pure white illumination) */
+    --bg-nav: rgba(207, 220, 236, 0.85);
+    --text: #0f172a;
+    /* Deep slate ink for high readability */
+    --text-muted: #334155;
+    --text-faint: #64748b;
 
     /* lines */
-    --border: #bab0cb;
-    --border-soft: #d8d2e6;
+    --border: #8fa0ba;
+    --border-soft: #b5c4da;
 
     /* accents & dynamic pill text */
-    --terracotta: #d89487;
-    --terracotta-soft: rgba(216, 148, 135, 0.14);
-    --text-terracotta: #6e342a;
+    --terracotta: #cc7d6f;
+    --terracotta-soft: rgba(204, 125, 111, 0.12);
+    --text-terracotta: #5c261e;
 
-    --rose: #e9c5c5;
-    --rose-soft: rgba(233, 197, 197, 0.35);
-    --text-rose: #7a4a4a;
+    --rose: #dcafaf;
+    --rose-soft: rgba(220, 175, 175, 0.25);
+    --text-rose: #613333;
 
-    --sage: #b5a77a;
-    --sage-soft: rgba(181, 167, 122, 0.18);
-    --text-sage: #5c5226;
+    --sage: #a39463;
+    --sage-soft: rgba(163, 148, 99, 0.15);
+    --text-sage: #423b21;
 
-    --ring: rgba(186, 176, 203, 0.40);
-    --shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 14px 36px rgba(90, 80, 130, 0.10);
+    --ring: rgba(143, 160, 186, 0.40);
+    --shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 8px 24px rgba(15, 23, 42, 0.06);
     --max: 920px;
 }
 
-/* Dark Mode Palette Override */
+/* Dark Mode Palette - Updated to match the Slate Blue theme */
 [data-theme="dark"] {
-    --bg: #13111a;
-    /* deep dark slate-purple base */
-    --bg-elev: #1c1926;
-    /* clean dark elevated surface */
-    --bg-soft: #252134;
-    /* muted dark lavender for containers */
-    --bg-nav: rgba(19, 17, 26, 0.82);
-    --text: #f0edf7;
-    /* crisp soft lavender-white text */
-    --text-muted: #a39bb3;
-    /* light slate-purple for secondary text */
-    --text-faint: #59526b;
-    /* deep background slate text */
+    /* surfaces & text */
+    --bg: #0f131a;
+    /* Deep slate-black base background */
+    --bg-elev: #1a2333;
+    /* Elevated surfaces/nav (A bit lighter at first) */
+    --bg-soft: #253147;
+    /* Hover state (Progressively lighter glow) */
+    --bg-nav: rgba(26, 35, 51, 0.85);
+    --text: #f1f5f9;
+    /* Light slate text */
+    --text-muted: #94a3b8;
+    --text-faint: #475569;
 
-    --border: #363047;
-    /* distinct dark lines */
-    --border-soft: #252133;
+    /* lines */
+    --border: #2e3f59;
+    --border-soft: #1e293b;
 
+    /* accents */
     --terracotta: #e3a296;
-    /* slightly brighter for safe contrast */
     --terracotta-soft: rgba(227, 162, 150, 0.15);
     --text-terracotta: #f5cfc9;
 
@@ -78,8 +77,8 @@
     --sage-soft: rgba(196, 182, 138, 0.15);
     --text-sage: #eae3cb;
 
-    --ring: rgba(163, 155, 179, 0.25);
-    --shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 14px 36px rgba(0, 0, 0, 0.4);
+    --ring: rgba(148, 163, 184, 0.25);
+    --shadow: 0 1px 0 rgba(0, 0, 0, 0.6), 0 12px 32px rgba(0, 0, 0, 0.4);
 }
 
 /* ============================================================
