@@ -2,61 +2,63 @@
    Zahra Keshavarz Rezaei — academic site
    Theme-aware stylesheet (Supports system preferred and toggled dark mode)
    Palette:
-     Lavender bg ...... #E4E0F7   (soft surfaces)
-     Slate-purple ..... #BAB0CB   (borders, secondary text, dividers)
-     Terracotta ....... #D89487   (accent / hover / active)
-     Soft rose ........ #E9C5C5   (highlight pills)
-     Muted sage/gold .. #B5A77A   (secondary accent / badges)
+     Brightened Steel Slate ... #C7D1E0 (10% lighter base backdrop)
+     Ice Blue Surface ......... #ECF1F7 (Elevated layers / card base)
+     Deep Royal Indigo ........ Accent 1
+     Ocean Blue ............... Accent 2
+     Deep Teal ................ Accent 3
 ============================================================ */
 
 :root {
     /* surfaces & text */
-    --bg: #A6B6CF;
-    /* Base background (Steel slate blue) */
-    --bg-elev: #CFDCEC;
-    /* Elevated surfaces/nav (Lighter ice blue) */
+    --bg: #C7D1E0;
+    /* Brightened base background */
+    --bg-elev: #ECF1F7;
+    /* Luminous surface/nav base (stays lighter at first) */
     --bg-soft: #ffffff;
     /* Hover state (Pure white illumination) */
-    --bg-nav: rgba(207, 220, 236, 0.85);
+    --bg-nav: rgba(236, 241, 247, 0.85);
+    --bg-pill: rgba(255, 255, 255, 0.45);
+    /* Soft semi-translucent glass blend for tech boxes */
     --text: #0f172a;
-    /* Deep slate ink for high readability */
+    /* Deep slate ink */
     --text-muted: #334155;
-    --text-faint: #64748b;
+    --text-faint: #5a6e85;
 
     /* lines */
-    --border: #8fa0ba;
-    --border-soft: #b5c4da;
+    --border: #a1b0c5;
+    --border-soft: #cbd5e1;
 
     /* accents & dynamic pill text */
-    --terracotta: #cc7d6f;
-    --terracotta-soft: rgba(204, 125, 111, 0.12);
-    --text-terracotta: #5c261e;
+    --terracotta: #1e40af;
+    --terracotta-soft: rgba(30, 64, 175, 0.06);
+    --text-terracotta: #1e3a8a;
 
-    --rose: #dcafaf;
-    --rose-soft: rgba(220, 175, 175, 0.25);
-    --text-rose: #613333;
+    --rose: #0369a1;
+    --rose-soft: rgba(3, 105, 161, 0.06);
+    --text-rose: #0c4a6e;
 
-    --sage: #a39463;
-    --sage-soft: rgba(163, 148, 99, 0.15);
-    --text-sage: #423b21;
+    --sage: #0f766e;
+    --sage-soft: rgba(15, 118, 110, 0.06);
+    --text-sage: #115e59;
 
-    --ring: rgba(143, 160, 186, 0.40);
-    --shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 8px 24px rgba(15, 23, 42, 0.06);
+    --ring: rgba(161, 176, 197, 0.40);
+    --shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 6px 20px rgba(15, 23, 42, 0.03);
     --max: 920px;
 }
 
-/* Dark Mode Palette - Updated to match the Slate Blue theme */
+/* Dark Mode Palette - Keeps dark slate-blue depth layout */
 [data-theme="dark"] {
     /* surfaces & text */
     --bg: #0f131a;
-    /* Deep slate-black base background */
     --bg-elev: #1a2333;
-    /* Elevated surfaces/nav (A bit lighter at first) */
+    /* Stays lighter at first view */
     --bg-soft: #253147;
-    /* Hover state (Progressively lighter glow) */
+    /* Progressively lighter glow on interaction */
     --bg-nav: rgba(26, 35, 51, 0.85);
+    --bg-pill: rgba(255, 255, 255, 0.05);
+    /* Sleek dark integrated glass tag */
     --text: #f1f5f9;
-    /* Light slate text */
     --text-muted: #94a3b8;
     --text-faint: #475569;
 
@@ -65,17 +67,17 @@
     --border-soft: #1e293b;
 
     /* accents */
-    --terracotta: #e3a296;
-    --terracotta-soft: rgba(227, 162, 150, 0.15);
-    --text-terracotta: #f5cfc9;
+    --terracotta: #60a5fa;
+    --terracotta-soft: rgba(96, 165, 250, 0.12);
+    --text-terracotta: #eff6ff;
 
-    --rose: #eba9a9;
-    --rose-soft: rgba(235, 169, 169, 0.15);
-    --text-rose: #f9dede;
+    --rose: #38bdf8;
+    --rose-soft: rgba(56, 189, 248, 0.12);
+    --text-rose: #f0f9ff;
 
-    --sage: #c4b68a;
-    --sage-soft: rgba(196, 182, 138, 0.15);
-    --text-sage: #eae3cb;
+    --sage: #2dd4bf;
+    --sage-soft: rgba(45, 212, 191, 0.12);
+    --text-sage: #f0fdfa;
 
     --ring: rgba(148, 163, 184, 0.25);
     --shadow: 0 1px 0 rgba(0, 0, 0, 0.6), 0 12px 32px rgba(0, 0, 0, 0.4);
@@ -107,7 +109,6 @@ body {
     letter-spacing: -0.005em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Smooth transition animation between themes */
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -426,6 +427,7 @@ section:last-of-type {
 .xp-card:hover {
     border-color: var(--terracotta);
     transform: translateY(-2px);
+    background: var(--bg-soft);
 }
 
 .xp-head {
@@ -532,7 +534,7 @@ section:last-of-type {
 }
 
 /* ============================================================
-   Pills / tags
+   Pills / tags (Redesigned Architecture Boxes)
 ============================================================ */
 .pills {
     display: flex;
@@ -542,40 +544,42 @@ section:last-of-type {
 
 .pill {
     display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 500;
+    font-size: 0.82rem;
+    font-weight: 550;
     color: var(--text-muted);
-    background: var(--bg-soft);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 4px 12px;
-    letter-spacing: 0.01em;
-    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    background: var(--bg-pill);
+    border: none;
+    /* Stripped clunky lines */
+    border-radius: 8px;
+    /* Modern minimal radius layout */
+    padding: 6px 14px;
+    letter-spacing: -0.01em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.01);
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .pill:hover {
-    border-color: var(--terracotta);
     color: var(--text);
-    transform: translateY(-1px);
+    background: var(--bg-soft);
+    /* Seamless bright glow effect on interaction */
+    transform: translateY(-1.5px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
 }
 
-/* category-accent variants (now leveraging theme-aware text rules) */
+/* category-accent variants (Clean borderless highlights) */
 .pill-terracotta {
     color: var(--text-terracotta);
     background: var(--terracotta-soft);
-    border-color: var(--terracotta);
 }
 
 .pill-rose {
     color: var(--text-rose);
     background: var(--rose-soft);
-    border-color: var(--rose);
 }
 
 .pill-sage {
     color: var(--text-sage);
     background: var(--sage-soft);
-    border-color: var(--sage);
 }
 
 .skills-row .pills {
@@ -584,7 +588,7 @@ section:last-of-type {
 
 .skills-row .pill {
     font-size: 0.86rem;
-    padding: 7px 16px;
+    padding: 8px 16px;
 }
 
 /* ============================================================
