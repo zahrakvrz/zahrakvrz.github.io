@@ -785,3 +785,160 @@ footer {
     border-color: var(--terracotta);
     background: var(--terracotta-soft);
 }
+
+/* ============================================================
+   Blog & Post Template
+============================================================ */
+.blog-post {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 36px 38px;
+    box-shadow: var(--shadow);
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    border-color: var(--terracotta);
+}
+
+.post-header {
+    margin-bottom: 24px;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+    font-size: 0.8rem;
+    color: var(--text-faint);
+    margin-bottom: 12px;
+}
+
+.post-meta-dot {
+    opacity: 0.6;
+}
+
+.post-title {
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin: 0;
+    color: var(--text);
+}
+
+.post-body {
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    line-height: 1.7;
+}
+
+.post-lead {
+    font-size: 1.12rem;
+    color: var(--text);
+    font-weight: 450;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.post-body p {
+    margin: 0 0 20px;
+}
+
+.post-quote {
+    margin: 28px 0;
+    padding: 16px 22px;
+    border-left: 3px solid var(--terracotta);
+    background: var(--terracotta-soft);
+    border-radius: 0 10px 10px 0;
+    font-style: italic;
+    color: var(--text);
+}
+
+/* ============================================================
+   Post Image Gallery (3 to 5 images)
+============================================================ */
+.post-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+}
+
+/* When 3 or 5 items exist, the first can span across 2 columns as a hero image */
+.post-gallery .gallery-item.featured {
+    grid-column: span 2;
+}
+
+.gallery-item {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--rose);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    background: var(--bg-pill);
+}
+
+/* Featured image gets extra height */
+.gallery-item.featured img {
+    height: 330px;
+}
+
+.gallery-item figcaption {
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+    color: var(--text-faint);
+    background: var(--bg-elev);
+    border-top: 1px solid var(--border-soft);
+}
+
+/* Post Footer */
+.post-footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-soft);
+}
+
+/* Responsive adjustment for Mobile screens */
+@media (max-width: 720px) {
+    .blog-post {
+        padding: 24px 20px;
+    }
+
+    .post-title {
+        font-size: 1.3rem;
+    }
+
+    .post-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .post-gallery .gallery-item.featured {
+        grid-column: span 1;
+    }
+
+    .gallery-item img,
+    .gallery-item.featured img {
+        height: 200px;
+    }
+}
